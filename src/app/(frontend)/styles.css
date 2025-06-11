@@ -8,11 +8,18 @@
   box-sizing: border-box;
 }
 
+@theme{
+  --color-navy-deep: #010924;
+  --color-navy-core: #032157;
+  --color-navy-glow: #0a2c70;
+
+}
+
 html {
   font-size: 18px;
   line-height: 32px;
 
-  background: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -164,3 +171,25 @@ svg {
     }
   }
 }
+
+@layer utilities {
+  .nav-link-text {
+    @apply text-white uppercase hover:cursor-pointer text-sm sm:text-sm;
+  }
+  .nav-link-text-underline {
+    @apply absolute left-0 bottom-0 w-full h-1 bg-white transition-transform duration-300 rounded-lg;
+  }
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .animate-blink {
+    animation: blink 1s step-start infinite;
+  }
+}
+
