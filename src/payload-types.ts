@@ -284,7 +284,7 @@ export interface Home {
   /**
    * A brief introduction about yourself. This will be displayed on the homepage.
    */
-  'About Me': string;
+  About: string;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -293,7 +293,7 @@ export interface Home {
  * via the `definition` "Home_select".
  */
 export interface HomeSelect<T extends boolean = true> {
-  'About Me'?: T;
+  About?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

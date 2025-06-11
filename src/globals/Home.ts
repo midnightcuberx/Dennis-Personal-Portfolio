@@ -7,7 +7,7 @@ export const Home: GlobalConfig = {
   },
   fields: [
     {
-      name: 'About Me',
+      name: 'About',
       type: 'textarea',
       required: true,
       admin: {

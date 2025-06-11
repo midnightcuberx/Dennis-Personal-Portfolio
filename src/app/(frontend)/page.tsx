@@ -1,7 +1,25 @@
 import Navbar from '@/components/Navbar/Navbar'
 import TypingText from '@/components/TypingText/TypingText'
+import { Home } from '@/payload-types'
+import { homeFallback } from '../fallback-globals/Home'
+import { getPayload } from 'payload'
+import config from '@payload-config'
+
+const payload = await getPayload({ config })
 
 export default async function HomePage() {
+  const getHomeData = async (): Promise<Home> => {
+    const res = await payload.findGlobal({
+      slug: 'Home',
+    })
+    if (!res) {
+      return homeFallback
+    }
+    return res
+  }
+
+  const homeData = await getHomeData()
+
   return (
     <div className="flex flex-col">
       <div className="min-h-screen bg-gradient-to-b from-navy-deep via-navy-core to-navy-glow text-white font-sans px-6 py-8">
@@ -14,14 +32,7 @@ export default async function HomePage() {
         <div className="mt-50 px-4">
           <div className="text-center md:text-left max-w-3xl mx-auto gap-4">
             <TypingText title={"Hi, I'm"} text={'Dennis Hu'} />
-            <p className="text-sm text-blue-200 leading-relaxed mb-8 md:mb-12">
-              I'm a software engineer with a passion for building innovative solutions and projects
-              through the art of coding. I specialise in Backend Development with frameworks such as
-              TSOA, NextJs, Flask and Express as well as libraries like Firebase Auth. I've also got
-              experience in frontend development, with frameworks such as NextJs, and libraries such
-              as TanStack Query. When I'm not coding, you can find me playing chess, learning a
-              language, or solving my trusty Rubik's Cube.
-            </p>
+            <p className="text-sm text-blue-200 leading-relaxed mb-8 md:mb-12">{homeData.About}</p>
             <div className="mt-6">
               <a href="/CV.pdf" download target="_blank">
                 <button className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition">
