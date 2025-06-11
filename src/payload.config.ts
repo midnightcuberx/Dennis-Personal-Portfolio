@@ -21,10 +21,6 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  routes: {
-    api: '/payload/api',
-    admin: '/payload/admin',
-  },
   collections: [Users, Media],
   globals: [Home],
   editor: lexicalEditor(),

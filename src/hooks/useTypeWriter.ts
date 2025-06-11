@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 export const useTypewriter = (text: string, speed: number = 50) => {
   const [displayedText, setDisplayedText] = useState(text[0])
