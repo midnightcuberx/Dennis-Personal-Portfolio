@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --font-mono: 'Roboto Mono', monospace;
@@ -8,11 +8,10 @@
   box-sizing: border-box;
 }
 
-@theme{
+@theme {
   --color-navy-deep: #010924;
   --color-navy-core: #032157;
   --color-navy-glow: #0a2c70;
-
 }
 
 html {
@@ -180,7 +179,8 @@ svg {
     @apply absolute left-0 bottom-0 w-full h-1 bg-white transition-transform duration-300 rounded-lg;
   }
   @keyframes blink {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 1;
     }
     50% {
@@ -192,4 +192,3 @@ svg {
     animation: blink 1s step-start infinite;
   }
 }
-
