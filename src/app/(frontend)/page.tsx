@@ -1,15 +1,12 @@
 import Navbar from '@/components/Navbar/Navbar'
 import TypingText from '@/components/TypingText/TypingText'
 import { Home } from '@/payload-types'
-import { homeFallback } from '../fallback-globals/Home'
-import { getPayload } from 'payload'
-import config from '@payload-config'
-
-const payload = await getPayload({ config })
+import { homeFallback } from '@/fallback-globals/Home'
+import { payloadInstance } from '@/data-layer/Payload'
 
 export default async function HomePage() {
   const getHomeData = async (): Promise<Home> => {
-    const res = await payload.findGlobal({
+    const res = await payloadInstance.findGlobal({
       slug: 'Home',
     })
     if (!res) {
