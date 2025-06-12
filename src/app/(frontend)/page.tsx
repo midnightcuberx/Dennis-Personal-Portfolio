@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar/Navbar'
+import Footer from '@/components/Footer/Footer'
 import Timeline from '@/components/Timeline/Timeline'
 import TypingText from '@/components/TypingText/TypingText'
 import ContentService from '@/data-layer/ContentService'
@@ -10,7 +11,7 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col">
-      <div className="min-h-screen bg-gradient-to-b from-navy-deep via-navy-core to-navy-glow text-white font-sans px-6">
+      <div className="min-h-screen bg-gradient-to-b from-navy-deep via-navy-core to-navy-glow text-white px-6">
         <Navbar
           navElements={[
             { href: '/projects', text: 'Projects' },
@@ -49,6 +50,7 @@ export default async function HomePage() {
       {/*Skills Section*/}
       {/*Projects Section*/}
       {/*Contact Section*/}
+      <Footer />
     </div>
   )
 }
