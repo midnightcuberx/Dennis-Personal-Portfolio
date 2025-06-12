@@ -48,7 +48,7 @@ export default async function HomePage() {
         </svg>
       </div>
       {/*Work Experience Section*/}
-      <div className="flex justify-center w-full md:w-[65%] mx-auto my-10">
+      <div className="flex justify-center items-center w-full md:w-[60%] md:mx-[20%] my-10">
         <Timeline timelineElements={workExperience} />
       </div>
       <div className="bg-navy-deep">

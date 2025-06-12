@@ -8,7 +8,7 @@ interface TimelineProps {
 
 const Timeline: React.FC<TimelineProps> = memo(({ timelineElements }) => {
   return (
-    <div>
+    <div className="mx-[5%]">
       <h2 className="text-3xl font-bold text-black mb-6 mx-4">Work Experience</h2>
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
         {timelineElements.map((element, index) => (

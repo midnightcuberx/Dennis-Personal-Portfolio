@@ -9,7 +9,7 @@ const TimelineElement: React.FC<WorkExperience> = memo(
       <div>
         <li className="mb-10 ms-4">
           <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700 hover:bg-black"></div>
-          <div className="transition-transform duration-300 hover:translate-x-3">
+          <div className="transition-transform duration-300 hover:translate-x-3 max-w-[600px] wrap-break-words">
             <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
               {formatDate(startDate)} - {endDate ? formatDate(endDate) : 'Present'}
             </time>
