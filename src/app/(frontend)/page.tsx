@@ -31,8 +31,19 @@ export default async function HomePage() {
           </div>
         </div>
       </div>
+      {/* Navy-to-white wave transition */}
+      <div className="w-full overflow-hidden leading-none relative">
+        <svg
+          viewBox="0 0 1440 100"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-[100px]"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#0a2c70" />
+        </svg>
+      </div>
       {/*Work Experience Section*/}
-      <div className="flex justify-center w-[65%] mx-auto">
+      <div className="flex justify-center w-[65%] mx-auto my-10">
         <Timeline timelineElements={workExperience} />
       </div>
       {/*Skills Section*/}
