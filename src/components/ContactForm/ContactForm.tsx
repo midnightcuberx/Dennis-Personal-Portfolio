@@ -42,7 +42,7 @@ const ContactForm: React.FC = () => {
 
         <button
           type="submit"
-          className="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-md transition-colors duration-200"
+          className="w-full bg-blue-200 text-black py-3 rounded-md hover:bg-blue-400 transition-colors duration-200"
         >
           Send
         </button>
