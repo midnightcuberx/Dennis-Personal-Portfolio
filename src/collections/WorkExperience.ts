@@ -30,6 +30,15 @@ export const WorkExperience: CollectionConfig = {
       required: false,
     },
     {
+      name: 'order',
+      type: 'number',
+      required: true,
+      unique: true,
+      admin: {
+        description: 'Order of the work experience in the timeline',
+      },
+    },
+    {
       name: 'company',
       type: 'text',
       required: true,

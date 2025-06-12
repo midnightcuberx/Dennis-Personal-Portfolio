@@ -168,6 +168,10 @@ export interface WorkExperience {
   description: string;
   startDate: string;
   endDate?: string | null;
+  /**
+   * Order of the work experience in the timeline
+   */
+  order: number;
   company: string;
   updatedAt: string;
   createdAt: string;
@@ -275,6 +279,7 @@ export interface WorkExperienceSelect<T extends boolean = true> {
   description?: T;
   startDate?: T;
   endDate?: T;
+  order?: T;
   company?: T;
   updatedAt?: T;
   createdAt?: T;
