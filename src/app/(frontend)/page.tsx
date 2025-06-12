@@ -48,14 +48,14 @@ export default async function HomePage() {
         </svg>
       </div>
       {/*Work Experience Section*/}
-      <div className="flex justify-center w-[65%] mx-auto my-10">
+      <div className="flex justify-center w-full md:w-[65%] mx-auto my-10">
         <Timeline timelineElements={workExperience} />
       </div>
       <div className="bg-navy-deep">
         <Skills />
       </div>
       {/*Contact Section*/}
-      <div>
+      <div className="w-[80%] md:w-[65%] mx-auto my-10">
         <ContactForm />
       </div>
 

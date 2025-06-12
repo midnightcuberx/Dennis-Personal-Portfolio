@@ -2,22 +2,50 @@ import React from 'react'
 
 const ContactForm: React.FC = () => {
   return (
-    <div>
+    <div className="bg-navy-deep text-white p-6 md:p-12 rounded-lg shadow-lg">
       <h1>Contact Me</h1>
-      <form>
+      <form className="space-y-6">
         <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <label htmlFor="name" className="block mb-1 text-sm">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Your name..."
+            className="w-full px-4 py-3 bg-white text-black border border-white rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+          />
         </div>
+
         <div>
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <label htmlFor="email" className="block mb-1 text-sm">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            placeholder="example@gmail.com"
+            className="w-full px-4 py-3 bg-white text-black border border-white rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+          />
         </div>
+
         <div>
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" required />
+          <label htmlFor="message" className="block mb-1 text-sm">
+            Message
+          </label>
+          <textarea
+            id="message"
+            placeholder="Your message..."
+            className="w-full px-4 py-3 bg-white text-black border border-white rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+          ></textarea>
         </div>
-        <button type="submit">Send</button>
+
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-md transition-colors duration-200"
+        >
+          Send
+        </button>
       </form>
     </div>
   )
