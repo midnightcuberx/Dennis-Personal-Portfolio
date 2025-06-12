@@ -23,6 +23,7 @@ export default async function HomePage() {
             { href: '/leetcode', text: 'Leetcode' },
           ]}
         />
+        {/* Hero Section */}
         <div className="mt-50 md:mt-0 md:flex md:items-center md:justify-center px-4 min-h-screen">
           <div className="text-left max-w-3xl mx-auto gap-4">
             <TypingText title={"Hi, I'm"} text={'Dennis Hu'} />
@@ -37,6 +38,7 @@ export default async function HomePage() {
           </div>
         </div>
       </div>
+
       {/* Navy-to-white wave transition */}
       <div className="w-full overflow-hidden leading-none relative">
         <svg
