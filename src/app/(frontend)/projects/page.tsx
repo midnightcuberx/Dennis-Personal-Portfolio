@@ -11,7 +11,7 @@ export default async function ProjectsPage() {
             { href: '/leetcode', text: 'Leetcode' },
           ]}
         />
-        <div className="flex-grow"></div>
+        <div className=""></div>
       </div>
 
       <Footer />
