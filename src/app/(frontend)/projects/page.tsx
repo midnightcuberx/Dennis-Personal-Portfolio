@@ -5,8 +5,8 @@ import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import { Project } from '@/payload-types'
 
 export default async function ProjectsPage() {
-  //const projects = await Handlers.getProjects()
-  const projects: Project[] = [
+  const projects = await Handlers.getProjects()
+  /*const projects: Project[] = [
     {
       id: '1',
       projectName: 'Project 1',
@@ -27,7 +27,7 @@ export default async function ProjectsPage() {
       updatedAt: new Date().toISOString(),
       createdAt: new Date().toISOString(),
     },
-  ]
+  ]*/
   return (
     <div className="flex flex-col">
       <div className="min-h-screen mt-50">
@@ -37,7 +37,7 @@ export default async function ProjectsPage() {
             { href: '/leetcode', text: 'Leetcode' },
           ]}
         />
-        <div className="mt-30">
+        <div className="mt-30 mx-[20%]">
           {projects.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}

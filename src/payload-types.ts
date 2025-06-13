@@ -191,6 +191,18 @@ export interface Project {
   description: string;
   date: string;
   /**
+   * Image representing the project
+   */
+  image?: (string | null) | Media;
+  /**
+   * URL to the live project
+   */
+  liveUrl?: string | null;
+  /**
+   * URL to the project repository on GitHub
+   */
+  githubUrl?: string | null;
+  /**
    * Tags associated with the project
    */
   tags: {
@@ -324,6 +336,9 @@ export interface ProjectsSelect<T extends boolean = true> {
   projectName?: T;
   description?: T;
   date?: T;
+  image?: T;
+  liveUrl?: T;
+  githubUrl?: T;
   tags?:
     | T
     | {

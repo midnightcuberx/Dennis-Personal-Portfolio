@@ -25,6 +25,31 @@ export const Project: CollectionConfig = {
       required: true,
     },
     {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+      admin: {
+        description: 'Image representing the project',
+      },
+    },
+    {
+      name: 'liveUrl',
+      type: 'text',
+      required: false,
+      admin: {
+        description: 'URL to the live project',
+      },
+    },
+    {
+      name: 'githubUrl',
+      type: 'text',
+      required: false,
+      admin: {
+        description: 'URL to the project repository on GitHub',
+      },
+    },
+    {
       name: 'tags',
       type: 'array',
       required: true,
