@@ -3,13 +3,13 @@ import Footer from '@/components/Footer/Footer'
 import Timeline from '@/components/Timeline/Timeline'
 import TypingText from '@/components/TypingText/TypingText'
 import ContentService from '@/data-layer/ContentService'
-import DataService from '@/data-layer/DataService'
 import Skills from '@/components/Skills/Skills'
 import ContactForm from '@/components/ContactForm/ContactForm'
+import Handlers from '@/handlers/Handlers'
 
 export default async function HomePage() {
   const homeData = await ContentService.getHomeData()
-  const workExperience = await DataService.getWorkExperience()
+  const workExperience = await Handlers.getWorkExperience()
 
   return (
     <div className="flex flex-col">

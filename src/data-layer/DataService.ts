@@ -1,4 +1,4 @@
-import { WorkExperience } from '@/payload-types'
+import { Project, WorkExperience } from '@/payload-types'
 import { payloadInstance } from './Payload'
 
 export default class DataService {
@@ -22,5 +22,21 @@ export default class DataService {
       return b.order - a.order
     })
     return res.docs
+  }
+
+  public static getProjects = async (): Promise<Project[]> => {
+    const res = await payloadInstance.find({ collection: 'projects' })
+    res.docs.sort((a, b) => {
+      return b.order - a.order
+    })
+    return res.docs
+  }
+
+  public static getProjectById = async (id: string): Promise<Project> => {
+    const res = await payloadInstance.findByID({
+      collection: 'projects',
+      id,
+    })
+    return res
   }
 }
