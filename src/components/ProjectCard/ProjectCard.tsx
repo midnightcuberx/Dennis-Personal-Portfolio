@@ -4,7 +4,7 @@ import React, { memo } from 'react'
 
 const ProjectCard: React.FC<Project> = memo(({ projectName, description, date, tags }) => {
   return (
-    <div>
+    <div className="bg-navy-deep">
       <h3>{projectName}</h3>
       <p>{description}</p>
       <time>{date}</time>
