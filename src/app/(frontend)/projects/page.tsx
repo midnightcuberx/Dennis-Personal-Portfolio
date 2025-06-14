@@ -4,7 +4,6 @@ import Navbar from '@/components/Navbar/Navbar'
 import Footer from '@/components/Footer/Footer'
 import Handlers from '@/handlers/Handlers'
 import ProjectCard from '@/components/ProjectCard/ProjectCard'
-import { Project } from '@/payload-types'
 
 export default async function ProjectsPage() {
   const projects = await Handlers.getProjects()
