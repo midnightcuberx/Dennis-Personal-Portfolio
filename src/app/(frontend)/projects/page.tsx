@@ -32,14 +32,14 @@ export default async function ProjectsPage() {
   ]*/
   return (
     <div className="flex flex-col">
-      <div className="min-h-screen">
+      <div className="min-h-screen mb-10">
         <Navbar
           navElements={[
             { href: '/projects', text: 'Projects' },
             { href: '/leetcode', text: 'Leetcode' },
           ]}
         />
-        <div className="mt-30 mx-[5%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+        <div className="mt-30 mx-[5%] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 p-4">
           {projects.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}

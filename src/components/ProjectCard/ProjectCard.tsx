@@ -10,7 +10,7 @@ import { FaGithub } from 'react-icons/fa'
 const ProjectCard: React.FC<Project> = memo(
   ({ projectName, description, date, tags, image, liveUrl, githubUrl }) => {
     return (
-      <Card className="bg-white outline outline-1 outline-navy-glow hover:outline-navy-deep transition-all duration-300 max-w-[500px] overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105 p-0">
+      <Card className="flex flex-col bg-white outline outline-1 outline-navy-glow hover:outline-navy-deep transition-all duration-300 max-w-[500px] overflow-hidden rounded-2xl hover:scale-105 p-0">
         {image && (
           <Image
             className="rounded-t-2xl"
@@ -23,7 +23,7 @@ const ProjectCard: React.FC<Project> = memo(
         <CardHeader>
           <CardTitle className="text-navy-glow">{projectName}</CardTitle>
         </CardHeader>
-        <CardContent className="text-navy-glow pb-6 flex flex-col">
+        <CardContent className="text-navy-glow pb-6 flex flex-col mt-auto">
           <div className="flex justify-between gap-2">
             {liveUrl && (
               <a
