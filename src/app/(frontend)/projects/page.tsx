@@ -8,6 +8,7 @@ import { Project } from '@/payload-types'
 
 export default async function ProjectsPage() {
   const projects = await Handlers.getProjects()
+  console.log('Projects:', projects)
   /*const projects: Project[] = [
     {
       id: '1',
@@ -32,14 +33,14 @@ export default async function ProjectsPage() {
   ]*/
   return (
     <div className="flex flex-col">
-      <div className="min-h-screen mt-50">
+      <div className="min-h-screen">
         <Navbar
           navElements={[
             { href: '/projects', text: 'Projects' },
             { href: '/leetcode', text: 'Leetcode' },
           ]}
         />
-        <div className="mt-30 mx-[20%]">
+        <div className="mt-30 mx-[5%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 items-stretch">
           {projects.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}
