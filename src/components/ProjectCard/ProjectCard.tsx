@@ -12,17 +12,17 @@ const ProjectCard: React.FC<Project> = memo(
     return (
       <Card className="bg-white outline outline-1 outline-navy-glow hover:outline-navy-deep transition-all duration-300 max-w-[500px] overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105 p-0">
         {image && (
-          <div className="relative w-[500px] h-[300px]">
-            <Image
-              src={`${(image as Media).url}`}
-              alt={(image as Media).alt || 'Project Image'}
-              fill
-              className="rounded-t-2xl object-cover"
-            />
-          </div>
+          <Image
+            className="rounded-t-2xl"
+            src={`${(image as Media).url}`}
+            alt={(image as Media).alt || 'Project Image'}
+            width={500}
+            height={300}
+          />
         )}
         <CardHeader>
           <CardTitle className="text-navy-glow">{projectName}</CardTitle>
+          <CardDescription>{description}</CardDescription>
         </CardHeader>
         <CardContent className="text-navy-glow pb-6 flex flex-col">
           <div className="flex justify-between gap-2">
@@ -47,13 +47,11 @@ const ProjectCard: React.FC<Project> = memo(
               </a>
             )}
           </div>
-          <div className="flex flex-wrap gap-2 mt-2">
-            {tags.map((tag) => (
-              <Badge key={tag.tag} className="text-navy-deep" variant="outline">
-                {tag.tag}
-              </Badge>
-            ))}
-          </div>
+          {tags.map((tag) => (
+            <Badge key={tag.tag} className="text-navy-deep" variant="outline">
+              {tag.tag}
+            </Badge>
+          ))}
           <button className="mt-4 bg-navy-deep rounded-2xl text-white transition-colors duration-300">
             View Project
           </button>
