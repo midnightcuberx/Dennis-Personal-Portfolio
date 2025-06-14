@@ -1,3 +1,5 @@
+//'use cache'
+
 import Navbar from '@/components/Navbar/Navbar'
 import Footer from '@/components/Footer/Footer'
 import Timeline from '@/components/Timeline/Timeline'
