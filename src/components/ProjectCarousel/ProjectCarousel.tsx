@@ -25,13 +25,13 @@ const ProjectCarousel: React.FC<CarouselProps> = React.memo(({ projects }) => {
     >
       <CarouselContent className="p-2 items-stretch justify-start">
         {projects.map((project) => (
-          <CarouselItem key={project.id} className="flex xl:basis-1/2 3xl:basis-1/3">
+          <CarouselItem key={project.id} className="flex xl:basis-1/2 2xl:basis-1/3">
             <ProjectCard {...project} />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden md:flex" />
+      <CarouselNext className="hidden md:flex" />
     </Carousel>
   )
 })

@@ -58,11 +58,11 @@ export default async function HomePage() {
       <div className="bg-navy-deep">
         <Skills />
       </div>
-      <div className="w-[75%] md:w-[65%] mx-auto my-10">
+      <div className="w-[80%] md:w-[65%] mx-auto my-10">
         <ProjectCarousel projects={projects} />
       </div>
       {/*Contact Section*/}
-      <div className="w-[75%] md:w-[65%] mx-auto my-10">
+      <div className="w-[80%] md:w-[65%] mx-auto my-10">
         <ContactForm />
       </div>
 
