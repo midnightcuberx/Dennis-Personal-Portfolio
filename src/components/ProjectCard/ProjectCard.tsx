@@ -22,7 +22,6 @@ const ProjectCard: React.FC<Project> = memo(
         )}
         <CardHeader>
           <CardTitle className="text-navy-glow">{projectName}</CardTitle>
-          <CardDescription>{description}</CardDescription>
         </CardHeader>
         <CardContent className="text-navy-glow pb-6 flex flex-col">
           <div className="flex justify-between gap-2">
@@ -47,11 +46,13 @@ const ProjectCard: React.FC<Project> = memo(
               </a>
             )}
           </div>
-          {tags.map((tag) => (
-            <Badge key={tag.tag} className="text-navy-deep" variant="outline">
-              {tag.tag}
-            </Badge>
-          ))}
+          <div className="flex flex-wrap gap-2 mt-2">
+            {tags.map((tag) => (
+              <Badge key={tag.tag} className="text-navy-deep" variant="outline">
+                {tag.tag}
+              </Badge>
+            ))}
+          </div>
           <button className="mt-4 bg-navy-deep rounded-2xl text-white transition-colors duration-300">
             View Project
           </button>
