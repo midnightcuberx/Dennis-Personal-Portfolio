@@ -22,18 +22,18 @@ const Skills: React.FC = () => {
       </div>
       {/*Skills Section*/}
       <div className="flex justify-center group p-4">
-        <h1 className="text-3xl font-bold relative inline-block">
+        <h1 className="text-3xl font-bold relative inline-block text-white">
           Skills
           <span className="absolute left-0 -bottom-1 h-1 bg-white w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
         </h1>
       </div>
       <div className="bg-navy-deep grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 p-10">
-        <RiTailwindCssFill size={200} className="mx-auto my-10" />
-        <RiNextjsFill size={200} className="mx-auto my-10" />
-        <AiOutlinePython size={200} className="mx-auto my-10" />
-        <FaJava size={200} className="mx-auto my-10" />
-        <SiTypescript size={200} className="mx-auto my-10" />
-        <FaHtml5 size={200} className="mx-auto my-10" />
+        <RiTailwindCssFill size={200} className="mx-auto my-10 text-white" />
+        <RiNextjsFill size={200} className="mx-auto my-10 text-white" />
+        <AiOutlinePython size={200} className="mx-auto my-10 text-white" />
+        <FaJava size={200} className="mx-auto my-10 text-white" />
+        <SiTypescript size={200} className="mx-auto my-10 text-white" />
+        <FaHtml5 size={200} className="mx-auto my-10 text-white" />
       </div>
 
       <div className="relative w-full h-64 bg-white overflow-hidden">
