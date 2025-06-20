@@ -21,7 +21,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <div className="min-h-screen mb-10">
         <Navbar
           navElements={[
-            { href: '/projects', text: 'Projects' },
+            { href: '/#projects', text: 'Projects' },
             { href: '/leetcode', text: 'Leetcode' },
           ]}
         />

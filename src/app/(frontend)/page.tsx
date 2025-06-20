@@ -20,7 +20,7 @@ export default async function HomePage() {
       <div className="min-h-screen bg-gradient-to-b from-navy-deep via-navy-core to-navy-glow text-white px-6">
         <Navbar
           navElements={[
-            { href: '/projects', text: 'Projects' },
+            { href: '/#projects', text: 'Projects' },
             { href: '/leetcode', text: 'Leetcode' },
           ]}
         />
@@ -58,7 +58,7 @@ export default async function HomePage() {
       <div className="bg-navy-deep">
         <Skills />
       </div>
-      <div className="w-[80%] md:w-[65%] mx-auto my-10">
+      <div className="w-[80%] md:w-[65%] mx-auto my-10" id="projects">
         <h1 className="text-center text-navy-deep">Projects</h1>
         <ProjectCarousel projects={projects} />
       </div>
