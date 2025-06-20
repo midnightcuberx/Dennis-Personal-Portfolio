@@ -3,8 +3,11 @@
 import Navbar from '@/components/Navbar/Navbar'
 import Footer from '@/components/Footer/Footer'
 import Handlers from '@/handlers/Handlers'
-import ProjectCard from '@/components/ProjectCard/ProjectCard'
 import { redirect } from 'next/navigation'
+import Image from 'next/image'
+import { Media } from '@/payload-types'
+import { FiLink2 } from 'react-icons/fi'
+import { FaGithub } from 'react-icons/fa'
 
 interface ProjectPageProps {
   params: Promise<{ id: string }>
@@ -25,8 +28,47 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             { href: '/leetcode', text: 'Leetcode' },
           ]}
         />
-        <div className="mt-30 mx-[5%] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 p-4">
-          <ProjectCard key={project.id} {...project} />
+        <div className="mt-30 mx-[5%] w-full md:w-[75%] lg:w-[50%]">
+          <div className="flex flex-col gap-6 items-center justify-center">
+            <h1 className="text-3xl font-bold mb-4 text-navy-deep">{project.projectName}</h1>
+            <Image
+              src={(project.image as Media).url || ''}
+              alt={project.projectName}
+              width={600}
+              height={450}
+              className="w-full h-auto rounded-lg mb-6"
+            />
+            <div className="flex flex-row gap-4 mt-4">
+              {project.tags.map((tag) => (
+                <span key={tag.tag} className="bg-navy-deep text-white px-3 py-1 rounded-full">
+                  {tag.tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex justify-between gap-2 text-navy-deep">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  className="flex items-center gap-2 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiLink2 /> Live Project
+                </a>
+              )}
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  className="flex items-center gap-2 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub /> GitHub Repository
+                </a>
+              )}
+            </div>
+            <p>{project.description}</p>
+          </div>
         </div>
       </div>
 
