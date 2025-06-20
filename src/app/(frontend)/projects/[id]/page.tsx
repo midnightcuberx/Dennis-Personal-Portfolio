@@ -63,7 +63,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </a>
               )}
             </div>
-            <p>{project.description}</p>
+            <p className="whitespace-pre-line">{project.description}</p>
           </div>
         </div>
       </div>
