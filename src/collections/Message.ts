@@ -3,7 +3,7 @@ import type { CollectionConfig } from 'payload'
 export const Message: CollectionConfig = {
   slug: 'messages',
   admin: {
-    useAsTitle: '',
+    useAsTitle: 'name',
   },
   fields: [
     {

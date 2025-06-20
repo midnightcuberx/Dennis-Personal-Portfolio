@@ -15,6 +15,16 @@ export default async function HomePage() {
   const workExperience = await Handlers.getWorkExperience()
   const projects = await Handlers.getProjects()
 
+  async function addMessage(formData: FormData) {
+    'use server'
+    const name = formData.get('name') as string
+    const email = formData.get('email') as string
+    const message = formData.get('message') as string
+    console.log('Form Data:', { name, email, message })
+
+    await Handlers.addMessage({ name, email, message })
+  }
+
   return (
     <div className="flex flex-col">
       <div className="min-h-screen bg-gradient-to-b from-navy-deep via-navy-core to-navy-glow text-white px-6">
@@ -59,7 +69,7 @@ export default async function HomePage() {
       </div>
       {/*Contact Section*/}
       <div className="w-[80%] md:w-[65%] mx-auto my-10">
-        <ContactForm />
+        <ContactForm action={addMessage} />
       </div>
 
       <Footer />
