@@ -7,6 +7,12 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
   },
   auth: true,
+  access: {
+    read: ({ req: { user } }) => user?.role === UserRole.Admin,
+    create: ({ req: { user } }) => user?.role === UserRole.Admin,
+    update: ({ req: { user } }) => user?.role === UserRole.Admin,
+    delete: ({ req: { user } }) => user?.role === UserRole.Admin,
+  },
   fields: [
     {
       name: 'role',
