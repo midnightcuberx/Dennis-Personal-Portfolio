@@ -59,6 +59,7 @@ export default async function HomePage() {
         <Skills />
       </div>
       <div className="w-[80%] md:w-[65%] mx-auto my-10">
+        <h1 className="text-center text-navy-deep">Projects</h1>
         <ProjectCarousel projects={projects} />
       </div>
       {/*Contact Section*/}
