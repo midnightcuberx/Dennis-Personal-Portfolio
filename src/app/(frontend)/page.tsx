@@ -1,25 +1,24 @@
+//'use cache'
+
 import Navbar from '@/components/Navbar/Navbar'
 import Footer from '@/components/Footer/Footer'
 import Timeline from '@/components/Timeline/Timeline'
 import TypingText from '@/components/TypingText/TypingText'
 import ContentService from '@/data-layer/ContentService'
-import DataService from '@/data-layer/DataService'
 import Skills from '@/components/Skills/Skills'
 import ContactForm from '@/components/ContactForm/ContactForm'
+import Handlers from '@/handlers/Handlers'
+import ProjectCarousel from '@/components/ProjectCarousel/ProjectCarousel'
 
 export default async function HomePage() {
   const homeData = await ContentService.getHomeData()
-  const workExperience = await DataService.getWorkExperience()
+  const workExperience = await Handlers.getWorkExperience()
+  const projects = await Handlers.getProjects()
 
   return (
     <div className="flex flex-col">
       <div className="min-h-screen bg-gradient-to-b from-navy-deep via-navy-core to-navy-glow text-white px-6">
-        <Navbar
-          navElements={[
-            { href: '/projects', text: 'Projects' },
-            { href: '/leetcode', text: 'Leetcode' },
-          ]}
-        />
+        <Navbar navElements={[{ href: '/#projects', text: 'Projects' }]} />
         {/* Hero Section */}
         <div className="mt-50 md:mt-0 md:flex md:items-center md:justify-center px-4 min-h-screen">
           <div className="text-left max-w-3xl mx-auto gap-4">
@@ -48,11 +47,15 @@ export default async function HomePage() {
         </svg>
       </div>
       {/*Work Experience Section*/}
-      <div className="flex justify-center w-full md:w-[65%] mx-auto my-10">
+      <div className="flex justify-center items-center w-full md:w-[60%] md:mx-[20%] my-10">
         <Timeline timelineElements={workExperience} />
       </div>
       <div className="bg-navy-deep">
         <Skills />
+      </div>
+      <div className="w-[80%] md:w-[65%] mx-auto my-10" id="projects">
+        <h1 className="text-center text-navy-deep">Projects</h1>
+        <ProjectCarousel projects={projects} />
       </div>
       {/*Contact Section*/}
       <div className="w-[80%] md:w-[65%] mx-auto my-10">

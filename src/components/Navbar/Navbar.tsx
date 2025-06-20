@@ -37,7 +37,7 @@ const NavBar: React.FC<NavBarProps> = memo(({ navElements }) => {
   }, [])
 
   return (
-    <div>
+    <div className="text-white">
       <nav
         className={`py-2 px-[5%] pr-[8%] fixed top-0 left-0 w-full z-50 transition-shadow duration-300 bg-navy-deep shadow-lg ${hasScrolled ? 'opacity-90' : ''}`}
       >

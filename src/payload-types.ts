@@ -70,6 +70,7 @@ export interface Config {
     users: User;
     media: Media;
     workExperience: WorkExperience;
+    projects: Project;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -79,6 +80,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     workExperience: WorkExperienceSelect<false> | WorkExperienceSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -178,6 +180,44 @@ export interface WorkExperience {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: string;
+  projectName: string;
+  /**
+   * Description of the project
+   */
+  description: string;
+  date: string;
+  /**
+   * Image representing the project
+   */
+  image?: (string | null) | Media;
+  /**
+   * URL to the live project
+   */
+  liveUrl?: string | null;
+  /**
+   * URL to the project repository on GitHub
+   */
+  githubUrl?: string | null;
+  /**
+   * Tags associated with the project
+   */
+  tags: {
+    tag: string;
+    id?: string | null;
+  }[];
+  /**
+   * Order of projects in the timeline
+   */
+  order: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -194,6 +234,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'workExperience';
         value: string | WorkExperience;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: string | Project;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -281,6 +325,27 @@ export interface WorkExperienceSelect<T extends boolean = true> {
   endDate?: T;
   order?: T;
   company?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  projectName?: T;
+  description?: T;
+  date?: T;
+  image?: T;
+  liveUrl?: T;
+  githubUrl?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  order?: T;
   updatedAt?: T;
   createdAt?: T;
 }
