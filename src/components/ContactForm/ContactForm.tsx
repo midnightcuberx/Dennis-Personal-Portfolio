@@ -1,10 +1,16 @@
+'use client'
+
 import React from 'react'
 
-const ContactForm: React.FC = () => {
+interface ContactFormProps {
+  action: (formData: FormData) => void
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ action }) => {
   return (
     <div className="bg-navy-deep text-white p-6 md:p-12 rounded-lg shadow-lg">
       <h1>Contact Me</h1>
-      <form className="space-y-6">
+      <form className="space-y-6" action={action}>
         <div>
           <label htmlFor="name" className="block mb-1 text-sm">
             Name
@@ -12,7 +18,9 @@ const ContactForm: React.FC = () => {
           <input
             type="text"
             id="name"
+            name="name"
             placeholder="Your name..."
+            required
             className="w-full px-4 py-3 bg-white text-black border border-white rounded-md focus:outline-none focus:ring-2 focus:ring-black"
           />
         </div>
@@ -24,6 +32,8 @@ const ContactForm: React.FC = () => {
           <input
             type="email"
             id="email"
+            name="email"
+            required
             placeholder="example@gmail.com"
             className="w-full px-4 py-3 bg-white text-black border border-white rounded-md focus:outline-none focus:ring-2 focus:ring-black"
           />
@@ -35,6 +45,8 @@ const ContactForm: React.FC = () => {
           </label>
           <textarea
             id="message"
+            name="message"
+            required
             placeholder="Your message..."
             className="w-full px-4 py-3 bg-white text-black border border-white rounded-md focus:outline-none focus:ring-2 focus:ring-black"
           ></textarea>

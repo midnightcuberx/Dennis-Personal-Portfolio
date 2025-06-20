@@ -1,5 +1,6 @@
-import { Project, WorkExperience } from '@/payload-types'
+import { Project, WorkExperience, Message } from '@/payload-types'
 import { payloadInstance } from './Payload'
+import { MessageCreationType } from '@/types/types'
 
 export default class DataService {
   public static getWorkExperience = async (): Promise<WorkExperience[]> => {
@@ -38,5 +39,19 @@ export default class DataService {
       id,
     })
     return res
+  }
+
+  public static addMessage = async (message: MessageCreationType): Promise<Message> => {
+    const res = await payloadInstance.create({
+      collection: 'messages',
+      data: message,
+    })
+    return res
+  }
+  // Add pagination or filtering later if needed
+  // For now, we will just return all messages
+  public static getMessages = async (): Promise<Message[]> => {
+    const res = await payloadInstance.find({ collection: 'messages' })
+    return res.docs
   }
 }
