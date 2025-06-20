@@ -35,7 +35,7 @@ export default async function HomePage() {
             <TypingText title={"Hi, I'm"} text={'Dennis Hu'} />
             <p className="text-lg text-blue-200 leading-relaxed mb-8 md:mb-12">{homeData.About}</p>
             <div className="mt-6">
-              <a href="/CV.pdf" download target="_blank">
+              <a href="/Dennis Hu CV.pdf" download target="_blank">
                 <button className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition">
                   Download My CV
                 </button>
