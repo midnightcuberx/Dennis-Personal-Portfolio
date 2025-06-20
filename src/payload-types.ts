@@ -71,6 +71,7 @@ export interface Config {
     media: Media;
     workExperience: WorkExperience;
     projects: Project;
+    messages: Message;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -81,6 +82,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     workExperience: WorkExperienceSelect<false> | WorkExperienceSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    messages: MessagesSelect<false> | MessagesSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -218,6 +220,27 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "messages".
+ */
+export interface Message {
+  id: string;
+  /**
+   * Name of the person sending the message
+   */
+  name: string;
+  /**
+   * Email address of the person sending the message
+   */
+  email: string;
+  /**
+   * Content of the message
+   */
+  message: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -238,6 +261,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'projects';
         value: string | Project;
+      } | null)
+    | ({
+        relationTo: 'messages';
+        value: string | Message;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -346,6 +373,17 @@ export interface ProjectsSelect<T extends boolean = true> {
         id?: T;
       };
   order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "messages_select".
+ */
+export interface MessagesSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  message?: T;
   updatedAt?: T;
   createdAt?: T;
 }

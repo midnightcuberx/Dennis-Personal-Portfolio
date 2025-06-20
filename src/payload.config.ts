@@ -12,6 +12,7 @@ import { Media } from './collections/Media'
 import { WorkExperience } from './collections/WorkExperience'
 import { Home } from './globals/Home'
 import { Project } from './collections/Project'
+import { Message } from './collections/Message'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -23,7 +24,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, WorkExperience, Project],
+  collections: [Users, Media, WorkExperience, Project, Message],
   globals: [Home],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

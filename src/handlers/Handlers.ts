@@ -1,5 +1,6 @@
 import DataService from '@/data-layer/DataService'
-import { Project, WorkExperience } from '@/payload-types'
+import { Message, Project, WorkExperience } from '@/payload-types'
+import { MessageCreationType } from '@/types/types'
 import { NotFound } from 'payload'
 
 export default class Handlers {
@@ -33,6 +34,23 @@ export default class Handlers {
       return workExperience
     } catch (error) {
       console.error('Error fetching work experience:', error)
+      return []
+    }
+  }
+
+  public static async addMessage(message: MessageCreationType): Promise<void> {
+    try {
+      await DataService.addMessage(message)
+    } catch (error) {
+      console.error('Error adding message:', error)
+    }
+  }
+  public static async getMessages(): Promise<Message[]> {
+    try {
+      const messages = await DataService.getMessages()
+      return messages
+    } catch (error) {
+      console.error('Error fetching messages:', error)
       return []
     }
   }
