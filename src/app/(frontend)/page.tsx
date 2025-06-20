@@ -18,12 +18,7 @@ export default async function HomePage() {
   return (
     <div className="flex flex-col">
       <div className="min-h-screen bg-gradient-to-b from-navy-deep via-navy-core to-navy-glow text-white px-6">
-        <Navbar
-          navElements={[
-            { href: '/#projects', text: 'Projects' },
-            { href: '/leetcode', text: 'Leetcode' },
-          ]}
-        />
+        <Navbar navElements={[{ href: '/#projects', text: 'Projects' }]} />
         {/* Hero Section */}
         <div className="mt-50 md:mt-0 md:flex md:items-center md:justify-center px-4 min-h-screen">
           <div className="text-left max-w-3xl mx-auto gap-4">

@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { Media } from '@/payload-types'
 import { FiLink2 } from 'react-icons/fi'
 import { FaGithub } from 'react-icons/fa'
+import { Badge } from '@/components/ui/badge'
 
 interface ProjectPageProps {
   params: Promise<{ id: string }>
@@ -21,13 +22,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <div className="flex flex-col">
-      <div className="min-h-screen mb-10">
-        <Navbar
-          navElements={[
-            { href: '/#projects', text: 'Projects' },
-            { href: '/leetcode', text: 'Leetcode' },
-          ]}
-        />
+      <div className="min-h-screen mb-10 flex items-center justify-center text-navy-deep">
+        <Navbar navElements={[{ href: '/#projects', text: 'Projects' }]} />
         <div className="mt-30 mx-[5%] w-full md:w-[75%] lg:w-[50%]">
           <div className="flex flex-col gap-6 items-center justify-center">
             <h1 className="text-3xl font-bold mb-4 text-navy-deep">{project.projectName}</h1>
@@ -38,11 +34,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               height={450}
               className="w-full h-auto rounded-lg mb-6"
             />
-            <div className="flex flex-row gap-4 mt-4">
+            <div className="flex flex-wrap gap-4 mt-4">
               {project.tags.map((tag) => (
-                <span key={tag.tag} className="bg-navy-deep text-white px-3 py-1 rounded-full">
+                <Badge key={tag.tag} variant="outline">
                   {tag.tag}
-                </span>
+                </Badge>
               ))}
             </div>
             <div className="flex justify-between gap-2 text-navy-deep">
