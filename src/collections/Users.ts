@@ -1,3 +1,4 @@
+import { UserRole } from '@/types/types'
 import type { CollectionConfig } from 'payload'
 
 export const Users: CollectionConfig = {
@@ -7,7 +8,15 @@ export const Users: CollectionConfig = {
   },
   auth: true,
   fields: [
-    // Email added by default
-    // Add more fields as needed
+    {
+      name: 'role',
+      type: 'select',
+      options: Object.values(UserRole),
+      defaultValue: UserRole.User,
+      required: true,
+      admin: {
+        description: 'Role of the user, used for access control.',
+      },
+    },
   ],
 }
