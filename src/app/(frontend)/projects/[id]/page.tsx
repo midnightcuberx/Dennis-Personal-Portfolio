@@ -32,6 +32,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               width={600}
               height={450}
               className="w-full h-auto rounded-lg mb-6"
+              quality={100}
             />
             <div className="flex flex-wrap gap-4 mt-4">
               {project.tags.map((tag) => (
