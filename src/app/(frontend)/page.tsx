@@ -15,7 +15,7 @@ export default async function HomePage() {
   const workExperience = await Handlers.getWorkExperience()
   const projects = await Handlers.getProjects()
 
-  async function addMessage(formData: FormData) {
+  async function addMessage(_: any, formData: FormData) {
     'use server'
     const name = formData.get('name') as string
     const email = formData.get('email') as string
@@ -23,6 +23,7 @@ export default async function HomePage() {
     console.log('Form Data:', { name, email, message })
 
     await Handlers.addMessage({ name, email, message })
+    return { success: true }
   }
 
   return (
