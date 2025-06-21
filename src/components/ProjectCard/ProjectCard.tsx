@@ -3,7 +3,6 @@ import { Project } from '@/payload-types'
 import React, { memo } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
-import Image from 'next/image'
 import { FiLink2 } from 'react-icons/fi'
 import { FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
@@ -13,7 +12,7 @@ const ProjectCard: React.FC<Project> = memo(
     return (
       <Card className="flex flex-col bg-white outline outline-1 outline-navy-glow hover:outline-navy-deep transition-all duration-300 overflow-hidden rounded-2xl hover:scale-105 p-0 m-3">
         {image && (
-          <Image
+          <img
             className="rounded-t-2xl w-full"
             src={`/${image}`}
             alt={projectName}
