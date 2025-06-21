@@ -24,13 +24,21 @@ export const Project: CollectionConfig = {
       type: 'text',
       required: true,
     },
-    {
+    /*{
       name: 'image',
       type: 'upload',
       relationTo: 'media',
       required: false,
       admin: {
         description: 'Image representing the project',
+      },
+    },*/
+    {
+      name: 'image',
+      type: 'text',
+      required: true,
+      admin: {
+        description: 'Image URL representing the project',
       },
     },
     {

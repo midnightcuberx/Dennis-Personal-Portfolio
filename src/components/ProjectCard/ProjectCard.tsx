@@ -1,5 +1,5 @@
 'use client'
-import { Media, Project } from '@/payload-types'
+import { Project } from '@/payload-types'
 import React, { memo } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
@@ -14,11 +14,11 @@ const ProjectCard: React.FC<Project> = memo(
       <Card className="flex flex-col bg-white outline outline-1 outline-navy-glow hover:outline-navy-deep transition-all duration-300 overflow-hidden rounded-2xl hover:scale-105 p-0 m-3">
         {image && (
           <Image
-            className="rounded-t-2xl"
-            src={`${(image as Media).url}`}
-            alt={(image as Media).alt || 'Project Image'}
-            width={(image as Media).width || 500}
-            height={(image as Media).height || 300}
+            className="rounded-t-2xl w-full"
+            src={`/${image}`}
+            alt={projectName}
+            width={500}
+            height={300}
           />
         )}
         <CardHeader>

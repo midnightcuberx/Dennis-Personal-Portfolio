@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="flex flex-col gap-6 items-center justify-center">
             <h1 className="text-3xl font-bold mb-4 text-navy-deep">{project.projectName}</h1>
             <Image
-              src={(project.image as Media).url || ''}
+              src={`/${project.image}`}
               alt={project.projectName}
               width={600}
               height={450}

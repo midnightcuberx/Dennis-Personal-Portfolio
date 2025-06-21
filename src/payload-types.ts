@@ -197,9 +197,9 @@ export interface Project {
   description: string;
   date: string;
   /**
-   * Image representing the project
+   * Image URL representing the project
    */
-  image?: (string | null) | Media;
+  image: string;
   /**
    * URL to the live project
    */
