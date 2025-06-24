@@ -30,5 +30,10 @@ export const Message: CollectionConfig = {
         description: 'Content of the message',
       },
     },
+    {
+      name: 'read',
+      type: 'checkbox',
+      defaultValue: false,
+    },
   ],
 }

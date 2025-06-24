@@ -240,6 +240,7 @@ export interface Message {
    * Content of the message
    */
   message: string;
+  read?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -389,6 +390,7 @@ export interface MessagesSelect<T extends boolean = true> {
   name?: T;
   email?: T;
   message?: T;
+  read?: T;
   updatedAt?: T;
   createdAt?: T;
 }
