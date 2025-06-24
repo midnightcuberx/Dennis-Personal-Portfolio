@@ -39,7 +39,7 @@ const NavBar: React.FC<NavBarProps> = memo(({ navElements }) => {
   return (
     <div className="text-white">
       <nav
-        className={`py-2 px-[5%] pr-[8%] sticky top-0 left-0 min-w-screen z-50 transition-shadow duration-300 bg-navy-deep shadow-lg ${hasScrolled ? 'opacity-90' : ''}`}
+        className={`py-2 px-[5%] pr-[8%] fixed top-0 left-0 min-w-screen z-50 transition-shadow duration-300 bg-navy-deep shadow-lg ${hasScrolled ? 'opacity-90' : ''}`}
       >
         <div className="container mx-auto flex items-center justify-between">
           <Link href="/">
