@@ -12,7 +12,7 @@ const TypingText: React.FC<TypingTextProps> = memo(({ title, text }) => {
   const displayText = useTypewriter(text, 50)
   return (
     <div>
-      <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+      <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
         {title} <br />
         <span className="text-blue-300">
           {displayText}

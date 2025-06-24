@@ -31,10 +31,12 @@ export default async function HomePage() {
       <div className="min-h-screen bg-gradient-to-b from-navy-deep via-navy-core to-navy-glow text-white px-6">
         <Navbar navElements={[{ href: '/#projects', text: 'Projects' }]} />
         {/* Hero Section */}
-        <div className="mt-50 md:mt-12 md:flex md:items-center md:justify-center p-4 min-h-screen">
+        <div className="mt-30 md:mt-12 md:flex md:items-center md:justify-center p-4 min-h-screen">
           <div className="text-left max-w-3xl mx-auto gap-4">
             <TypingText title={"Hi, I'm"} text={'Dennis Hu'} />
-            <p className="text-lg text-blue-200 leading-relaxed mb-8 md:mb-12">{homeData.About}</p>
+            <p className="text-md sm:text-lg text-blue-200 leading-relaxed mb-8 md:mb-12">
+              {homeData.About}
+            </p>
             <div className="mt-6">
               <a href="/Dennis Hu CV.pdf" download target="_blank">
                 <button className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition">
