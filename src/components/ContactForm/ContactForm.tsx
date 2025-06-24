@@ -3,14 +3,15 @@
 import React from 'react'
 
 interface ContactFormProps {
-  action: (formData: FormData) => void
+  action: (_: any, formData: FormData) => Promise<{ success: boolean }>
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ action }) => {
+  const [_, formAction, isPending] = React.useActionState(action, null)
   return (
     <div className="bg-navy-deep text-white p-6 md:p-12 rounded-lg shadow-lg">
       <h1>Contact Me</h1>
-      <form className="space-y-6" action={action}>
+      <form className="space-y-6" action={formAction}>
         <div>
           <label htmlFor="name" className="block mb-1 text-sm">
             Name
@@ -56,7 +57,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ action }) => {
           type="submit"
           className="w-full bg-blue-200 text-black py-3 rounded-md hover:bg-blue-400 transition-colors duration-200"
         >
-          Send
+          {isPending ? 'Sending...' : 'Send Message'}
         </button>
       </form>
     </div>
