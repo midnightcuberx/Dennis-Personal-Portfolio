@@ -240,7 +240,10 @@ export interface Message {
    * Content of the message
    */
   message: string;
-  read?: boolean | null;
+  /**
+   * Indicates whether the message has been read
+   */
+  read: boolean;
   updatedAt: string;
   createdAt: string;
 }
