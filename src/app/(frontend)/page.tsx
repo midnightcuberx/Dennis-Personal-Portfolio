@@ -22,7 +22,7 @@ export default async function HomePage() {
     const message = formData.get('message') as string
     console.log('Form Data:', { name, email, message })
 
-    await Handlers.addMessage({ name, email, message })
+    await Handlers.addMessage({ name, email, message, read: false })
     return { success: true }
   }
 
